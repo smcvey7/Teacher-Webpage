@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "smcvey",
+      "password": "password",
+      "onAssignment": 2,
+      "completed": [
+        {
+          "id": 1,
+          "number": 1,
+          "submission": "我叫李咏珲",
+          "grade": 5,
+          "comments": "你好李咏珲，很高兴认识你！",
+          "isGraded": true
+        }
+      ],
+      "messages": [
+        {
+        "id": 1,
+        "content": "Is there homework due tomorrow?",
+        "response": "Yes, you should complete assignment 1."
+        }
+    ]
+    }
+    
+  ],
+  "assignments": [
+    {
+      "id": 1,
+      "num": 1,
+      "title": "Self introduction-自我介绍",
+      "type": "writing",
+      "prompt": "Write a short paragraph introducing yourself using the vocabulary and sentance patterns we learned in unit 1 (pg 2-15)"
+    }
+  ],
+  "announcements": [
+    {
+      "id": 1,
+      "message": "Everyone please remember to bring your textbooks to class tomorrow"
+    }
+  ],
+  "gradebook": [
+    {
+      "student": "smcvey",
+      "grades": []
+    }
+  ],
+  "messages": [
+    {
+      "sender": "smcvey",
+      "hasResponse": true,
+      "content": "Is there homework due tomorrow?",
+      "response": "Yes, you should complete assignment 1."
+    }
+  ]
+}
