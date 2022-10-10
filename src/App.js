@@ -31,15 +31,22 @@ function App() {
         alert("Incorrect username/password combo. Please try again or create an account.")}
       else if (userInfo.username === userData[0].username && userInfo.password === userData[0].password){
         alert("Welcome!")
+        setIsLoggedIn(true)
         setCurrentUser(userData[0])
-        // history.push("/")
+        history.push("/")
       }
     })
+  }
+
+  function handleLogOut(){
+    setIsLoggedIn(false)
+    setCurrentUser("guest")
+    console.log("logged out")
   }
   
   return (
     <div>
-    <NavBar isLoggedIn={isLoggedIn} />
+    <NavBar isLoggedIn={isLoggedIn} currentUser={currentUser.username} handleLogOut={handleLogOut} />
     <Switch>
       <Route exact path="/">
         <Home isLoggedIn={isLoggedIn} />
