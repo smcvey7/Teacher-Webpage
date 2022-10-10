@@ -17,13 +17,25 @@
       ],
       "messages": [
         {
-        "id": 1,
-        "content": "Is there homework due tomorrow?",
-        "response": "Yes, you should complete assignment 1."
+          "id": 1,
+          "content": "Is there homework due tomorrow?",
+          "response": "Yes, you should complete assignment 1."
         }
-    ]
+      ]
+    },
+    {
+      "username": "pmcvey",
+      "password": "kittenmama",
+      "onAssignment": 0,
+      "completed": [],
+      "messages": [
+        {
+          "id": 1,
+          "content": "Welcome to Mr. McVey's classroom!"
+        }
+      ],
+      "id": 2
     }
-    
   ],
   "assignments": [
     {

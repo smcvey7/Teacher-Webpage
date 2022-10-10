@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import {Route, Switch, useHistory} from "react-router-dom"
@@ -15,7 +15,6 @@ function App() {
   const history = useHistory()
 
   function handleLogIn(userInfo){
-    console.log("userinfo", userInfo)
     fetch(`http://localhost:3000/users/`, {
       method: "GET",
       headers: {
@@ -41,7 +40,47 @@ function App() {
   function handleLogOut(){
     setIsLoggedIn(false)
     setCurrentUser("guest")
-    console.log("logged out")
+    history.push("/login")
+  }
+
+  function createAccount(userInfo){
+    const newUser = {
+      username: userInfo.username,
+      password: userInfo.password,
+      onAssignment: 0,
+      completed: [],
+      messages: [
+        {
+          id: 1,
+          content: "Welcome to Mr. McVey's classroom!"
+        }
+      ]
+    }
+    
+    fetch(`http://localhost:3000/users/`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "Application/json"
+      }
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      const userData = data.filter(user=>user.username === userInfo.username)
+      if (userData.length !== 0) alert(`Username ${userInfo.username} already taken. Please select a different username.`)
+      else{
+        fetch(`http://localhost:3000/users/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json"
+      },
+      body: JSON.stringify(newUser)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log("posted", data)
+    })
+        }
+    })
   }
   
   return (
@@ -61,7 +100,7 @@ function App() {
         <Messages />
       </Route>
       <Route path="/login">
-        <Login isLoggedIn={isLoggedIn} handleLogIn={handleLogIn} />
+        <Login isLoggedIn={isLoggedIn} handleLogIn={handleLogIn} createAccount={createAccount} />
       </Route>
     </Switch>
   </div>
