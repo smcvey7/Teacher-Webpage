@@ -29,7 +29,6 @@ function App() {
         console.log("userData", userData)
         alert("Incorrect username/password combo. Please try again or create an account.")}
       else if (userInfo.username === userData[0].username && userInfo.password === userData[0].password){
-        alert("Welcome!")
         setIsLoggedIn(true)
         setCurrentUser(userData[0])
         history.push("/")
@@ -85,10 +84,10 @@ function App() {
   
   return (
     <div>
-    <NavBar isLoggedIn={isLoggedIn} currentUser={currentUser.username} handleLogOut={handleLogOut} />
+    <NavBar isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
     <Switch>
       <Route exact path="/">
-        <Home isLoggedIn={isLoggedIn} />
+        <Home isLoggedIn={isLoggedIn} currentUser={currentUser.username} />
       </Route>
       <Route isLoggedIn={isLoggedIn} path="/assignments">
         <Assignments />

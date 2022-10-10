@@ -46,9 +46,8 @@ function Login({ isLoggedIn, handleLogIn, createAccount }){
       <h1>Login</h1>
       <form id="logInForm" onSubmit={onSubmitClick}>
         username:<input value={userInfo.username} name="username" onChange={handleChange}/>
-        password:<input type="password" name="password" value={userInfo.password} onChange={handleChange}/>
-        <p onClick={()=>setHasAccount(false)}>Create an account here</p>
-        <button id="submitLogIn">Submit</button>
+        password:<input type="password" name="password" value={userInfo.password} onChange={handleChange}/><button id="submitLogIn">Submit</button><br/>
+        <a className="clickLink" onClick={()=>setHasAccount(false)}>Create an account here</a><br/>
       </form>
     </div>
     :
@@ -56,9 +55,8 @@ function Login({ isLoggedIn, handleLogIn, createAccount }){
       <h1>Create Account</h1>
       <form id="createAccountForm" onSubmit={onCreateAccountClick}>
         username:<input value={userInfo.username} name="username" onChange={handleChange}/>
-        password:<input type="password" name="password" value={userInfo.password} onChange={handleChange}/>
-        <p onClick={()=>setHasAccount(true)}>Have an account? Login here</p>
-        <button id="submitCreateAccount">Submit</button>
+        password:<input type="password" name="password" value={userInfo.password} onChange={handleChange}/><button id="submitCreateAccount">Submit</button><br/>
+        <a className="clickLink" onClick={()=>setHasAccount(true)}>Have an account? Login here</a><br/>
       </form>
     </div>
   )
