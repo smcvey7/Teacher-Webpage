@@ -48,10 +48,11 @@ function App() {
       password: userInfo.password,
       onAssignment: 0,
       completed: [],
+      userAssignments: [],
       messages: [
         {
           id: 1,
-          content: "Welcome to Mr. McVey's classroom!"
+          response: "Welcome to Mr. McVey's classroom!"
         }
       ]
     }
