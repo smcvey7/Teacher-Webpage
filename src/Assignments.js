@@ -21,10 +21,14 @@ function Assignments({ isLoggedIn, currentUser }){
   }, [])
 
   const UpcomingAssignmentModules = assignmentList.map(item=>{
-    if (item.num !== currentUser.onAssignment){
-      return (
-      <li key={item.id}><Assignment assignmentInfo={item} /></li>
-    )}
+    if (isLoggedIn){
+      const completed = currentUser.completed.includes(item.num)
+      const isCurrent = item.num === currentUser.onAssignment
+      if (!completed && !isCurrent){
+        return (
+        <li key={item.id}><Assignment assignmentInfo={item} /></li>
+      )}
+    }
   })
 
   const currentAssignmentModule = assignmentList.map(item=>{
@@ -35,10 +39,13 @@ function Assignments({ isLoggedIn, currentUser }){
   })
 
   const completedAssignmentModules = assignmentList.map(item=>{
-    if (item.num === currentUser.onAssignment){
-      return (
-      <li key={item.id}><Assignment assignmentInfo={item} /></li>
-    )}
+    if (isLoggedIn){
+      const completed = currentUser.completed.includes(item.num)
+      if (completed){
+        return (
+        <li key={item.id}><Assignment assignmentInfo={item} /></li>
+      )}
+    }
   })
 
   if (!isLoggedIn) return <p>Log in to view assignments</p>

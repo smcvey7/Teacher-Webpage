@@ -10,7 +10,7 @@ function Assignment({assignmentInfo}){
 
   return(
     <div>
-      <h3>{assignmentInfo.title} ({assignmentInfo.worth}points)</h3>
+      <h3>{assignmentInfo.num}-{assignmentInfo.title} ({assignmentInfo.worth}points)</h3>
       <small>({assignmentInfo.type})</small>
       <small>({assignmentInfo.due})</small>
       <p>{assignmentInfo.prompt}</p>
