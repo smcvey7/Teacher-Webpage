@@ -83,26 +83,30 @@ function App() {
   }
 
   function updateMessages(newMessage){
+    const addition = {
+      messages: [
+        ...currentUser.messages,
+        newMessage
+      ]
+    }
     fetch(`http://localhost:3000/users/${currentUser.id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "Application/json"
       },
-      body: JSON.stringify({
-        messages: [
-          ...currentUser.messages,
-          newMessage
-        ]
-      })
+      body: JSON.stringify(addition)
     })
-    .then(res=>res.json())
-    .then(data=>setCurrentUser({
+    .then(res=>{res.json()})
+    .then(data=>{
+      console.log(data)
+      setCurrentUser({
       ...currentUser,
       messages: [
         ...currentUser.messages,
-        data
+        newMessage
       ]
-    }))
+      })
+    })
   }
 
   return (

@@ -4,6 +4,7 @@ import Assignment from "./Assignment";
 function Assignments({ isLoggedIn, currentUser }){
   const [assignmentList, setAssignmentList]=useState([])
   const [onAssignment, setOnAssignment]=useState({})
+  const [upcoming, setUpcoming]=useState([])
 
   useEffect(()=>{
     fetch(`http://localhost:3000/assignments/`, {

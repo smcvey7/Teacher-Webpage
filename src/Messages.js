@@ -13,19 +13,20 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
   }
 
   function onChange(e){
-    const newMessage = {
-      sender: currentUser.username,
-      hasResponse: false,
-      content: e.target.value,
-      response: ""
-    }
+    const content = e.target.value
 
-    setMessageContent(newMessage)
+    setMessageContent(content)
   }
 
   function handleMessageSubmit(e){
+    const newMessage = {
+      sender: currentUser.username,
+      hasResponse: false,
+      content: messageContent,
+      response: ""
+    }
     e.preventDefault()
-    updateMessages(messageContent)
+    updateMessages(newMessage)
     setMessageContent("")
   }
   
@@ -41,7 +42,7 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
       {sendNew ? 
       <form onSubmit={handleMessageSubmit}>
         <h2>New Message</h2>
-        <textarea onChange={onChange} >{messageContent}</textarea><br/>
+        <textarea onChange={onChange} value={messageContent} ></textarea><br/>
         <input type="submit" />
       </form> : <p></p>}
       <ul>{messageModules}</ul>
