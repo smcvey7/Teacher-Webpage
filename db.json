@@ -20,25 +20,32 @@
       ],
       "messages": [
         {
-          "id": 1,
           "sender": "smcvey",
           "hasResponse": true,
           "content": "Is there homework due tomorrow?",
-          "response": "Yes, you should complete assignment 1."
+          "response": "Yes, you should complete assignment 1.",
+          "date": "2022-09-29 09:09:09"
         },
         {
-          "id": 2,
           "sender": "smcvey",
           "hasResponse": true,
           "content": "I am sick and can't come to class today.",
-          "response": "Thank you for letting me know. Hope you feel better soon."
+          "response": "Thank you for letting me know. Hope you feel better soon.",
+          "date": "2022-10-01 11:23:03"
         },
         {
-          "id": 3,
           "sender": "smcvey",
           "hasResponse": false,
           "content": "How did I do on the test yesterday?",
-          "response": ""
+          "response": "",
+          "date": "2022-10-09 06:46:33"
+        },
+        {
+          "sender": "smcvey",
+          "hasResponse": false,
+          "content": "Thanks for all your help today!",
+          "response": "",
+          "date": "2022-10-11 21:51:52"
         }
       ]
     },

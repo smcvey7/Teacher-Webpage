@@ -19,11 +19,20 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
   }
 
   function handleMessageSubmit(e){
+
+    const today = new Date();
+    const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const dateTime = date+' '+time;
+ 
+    console.log(dateTime)
+
     const newMessage = {
       sender: currentUser.username,
       hasResponse: false,
       content: messageContent,
-      response: ""
+      response: "",
+      date: dateTime
     }
     e.preventDefault()
     updateMessages(newMessage)
@@ -31,8 +40,8 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
   }
   
 
-  const messageModules = messages.map(message=>{
-    return <li key={message.id}><Message currentUser={currentUser} info = {message} /></li>
+  const messageModules = messages.slice(0).reverse().map(message=>{
+    return <li key={message.content}><Message currentUser={currentUser} info = {message} /></li>
   })
 
   if (!isLoggedIn) return <p>Log in to view messages</p>
