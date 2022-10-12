@@ -4,18 +4,28 @@
       "id": 1,
       "username": "smcvey",
       "password": "password",
-      "onAssignment": 2,
+      "onAssignment": 3,
       "completed": [
-        1
+        1,
+        2
       ],
       "userAssignments": [
         {
           "id": 1,
-          "number": 1,
+          "num": 1,
           "submission": "我叫李咏珲",
           "grade": 5,
+          "completed": true,
           "comments": "你好李咏珲，很高兴认识你！",
           "isGraded": true
+        },
+        {
+          "num": 2,
+          "submission": "我家有五口人",
+          "grade": "",
+          "completed": true,
+          "comments": "",
+          "isGraded": false
         }
       ],
       "messages": [
@@ -99,6 +109,19 @@
       "due": "10/2",
       "worth": 5,
       "prompt": "Write a short paragraph introducing your hobbies.",
+      "submission": {
+        "text": "",
+        "completed": false
+      }
+    },
+    {
+      "id": 4,
+      "num": 4,
+      "title": "数鸭子",
+      "type": "translation",
+      "due": "10/5",
+      "worth": 5,
+      "prompt": "Translate the following into English:\n 门前大桥下,游过一群鸭 \n 快来快来数一数,二四六七八 \n 嘎嘎嘎嘎，真呀真多 \n 数不清到底多少鸭 \n 数不清到底多少鸭 \n 赶鸭老爷爷，胡子白花花 \n 唱呀唱着家乡戏，还会说笑话 \n 小孩，小孩，快快上学校 \n 别考个鸭蛋抱回家 \n 别考个鸭蛋抱回家",
       "submission": {
         "text": "",
         "completed": false

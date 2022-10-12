@@ -109,6 +109,30 @@ function App() {
     })
   }
 
+  function saveSubmission(newSubmission){
+    const addition = {
+      ...currentUser,
+      onAssignment: newSubmission.completed ? currentUser.onAssignment+1 : currentUser.onAssignment,
+      completed: newSubmission.completed ? [...currentUser.completed, newSubmission.num] : [...currentUser.completed],
+      userAssignments: [
+        ...currentUser.userAssignments,
+        newSubmission
+      ]
+    }
+    fetch(`http://localhost:3000/users/${currentUser.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "Application/json"
+      },
+      body: JSON.stringify(addition)
+    })
+    .then(res=>{res.json()})
+    .then(data=>{
+      console.log(data)
+      setCurrentUser(addition)
+    })
+  }
+
   return (
     <div>
     <NavBar isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
@@ -117,7 +141,7 @@ function App() {
         <Home isLoggedIn={isLoggedIn} currentUser={currentUser} />
       </Route>
       <Route exact path="/assignments">
-        <Assignments isLoggedIn={isLoggedIn} currentUser={currentUser} />
+        <Assignments saveSubmission={saveSubmission} isLoggedIn={isLoggedIn} currentUser={currentUser} />
       </Route>
       <Route exact path="/grades" >
         <Grades isLoggedIn={isLoggedIn} currentUser={currentUser} />

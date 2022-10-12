@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Assignment from "./Assignment";
 
-function Assignments({ isLoggedIn, currentUser }){
+function Assignments({ isLoggedIn, currentUser, saveSubmission }){
   const [assignmentList, setAssignmentList]=useState([])
   const [onAssignment, setOnAssignment]=useState({})
   const [upcoming, setUpcoming]=useState([])
@@ -26,7 +26,7 @@ function Assignments({ isLoggedIn, currentUser }){
       const isCurrent = item.num === currentUser.onAssignment
       if (!completed && !isCurrent){
         return (
-        <li key={item.id}><Assignment assignmentInfo={item} /></li>
+        <li key={item.id}><Assignment saveSubmission={saveSubmission} assignmentInfo={item} /></li>
       )}
     }
   })
@@ -34,16 +34,17 @@ function Assignments({ isLoggedIn, currentUser }){
   const currentAssignmentModule = assignmentList.map(item=>{
     if (item.num === currentUser.onAssignment){
       return (
-      <li key={item.id}><Assignment assignmentInfo={item} /></li>
+      <li key={item.id}><Assignment saveSubmission={saveSubmission} assignmentInfo={item} /></li>
     )}
   })
 
   const completedAssignmentModules = assignmentList.map(item=>{
     if (isLoggedIn){
       const completed = currentUser.completed.includes(item.num)
+      const userAssignment = currentUser.userAssignments.filter(entry=>entry.num === item.num)
       if (completed){
         return (
-        <li key={item.id}><Assignment assignmentInfo={item} /></li>
+        <li key={item.id}><Assignment saveSubmission={saveSubmission} assignmentInfo={item} userAssignment={userAssignment[0]} /></li>
       )}
     }
   })
