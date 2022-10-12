@@ -6,6 +6,9 @@
       "password": "password",
       "onAssignment": 2,
       "completed": [
+        1
+      ],
+      "userAssignments": [
         {
           "id": 1,
           "number": 1,
@@ -18,8 +21,23 @@
       "messages": [
         {
           "id": 1,
+          "sender": "smcvey",
+          "hasResponse": true,
           "content": "Is there homework due tomorrow?",
           "response": "Yes, you should complete assignment 1."
+        },
+        {
+          "id": 2,
+          "sender": "smcvey",
+          "hasResponse": true,
+          "content": "I am sick and can't come to class today.",
+          "response": "Thank you for letting me know. Hope you feel better soon."
+        },
+        {
+          "sender": "smcvey",
+          "hasResponse": false,
+          "content": "How did I do on the test yesterday?",
+          "response": ""
         }
       ]
     },
@@ -28,6 +46,7 @@
       "password": "kittenmama",
       "onAssignment": 0,
       "completed": [],
+      "userAssignments": [],
       "messages": [
         {
           "id": 1,
@@ -43,7 +62,39 @@
       "num": 1,
       "title": "Self introduction-自我介绍",
       "type": "writing",
-      "prompt": "Write a short paragraph introducing yourself using the vocabulary and sentance patterns we learned in unit 1 (pg 2-15)"
+      "due": "9/30",
+      "worth": 5,
+      "prompt": "Write a short paragraph introducing yourself using the vocabulary and sentance patterns we learned in unit 1 (pg 2-15)",
+      "submission": {
+        "text": "",
+        "completed": true
+      }
+    },
+    {
+      "id": 2,
+      "num": 2,
+      "title": "My family-我的家人",
+      "type": "writing",
+      "due": "10/2",
+      "worth": 5,
+      "prompt": "Write a short paragraph introducing your family.",
+      "submission": {
+        "text": "",
+        "completed": false
+      }
+    },
+    {
+      "id": 3,
+      "num": 3,
+      "title": "My hobbies-我的爱好",
+      "type": "writing",
+      "due": "10/2",
+      "worth": 5,
+      "prompt": "Write a short paragraph introducing your hobbies.",
+      "submission": {
+        "text": "",
+        "completed": false
+      }
     }
   ],
   "announcements": [

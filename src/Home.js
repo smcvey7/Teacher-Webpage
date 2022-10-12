@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom"
 
 function Home({ isLoggedIn, currentUser }){
-  
 
   if (!isLoggedIn) return(
     <div>
@@ -12,7 +11,7 @@ function Home({ isLoggedIn, currentUser }){
   ) 
   else return(
     <div>
-      <h1>Welcome to Mr. McVey's class, {currentUser}</h1>
+      <h1>Welcome to Mr. McVey's class, {currentUser.username}</h1>
       <h2>Weekly calendar</h2>
       <table>
         <tbody>

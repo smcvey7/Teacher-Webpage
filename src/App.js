@@ -11,8 +11,9 @@ import Home from './Home';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn]=useState(false)
-  const [currentUser, setCurrentUser] = useState("guest")
+  const [currentUser, setCurrentUser] = useState({})
   const history = useHistory()
+
 
   function handleLogIn(userInfo){
     fetch(`http://localhost:3000/users/`, {
@@ -26,11 +27,10 @@ function App() {
       const userData = data.filter(user=>user.username === userInfo.username)
       if (userData.length === 0) alert(`Username ${userInfo.username} does not exist. Please try again or create an account.`)
       else if (userInfo.username !== userData[0].username || userInfo.password !== userData[0].password) {
-        console.log("userData", userData)
         alert("Incorrect username/password combo. Please try again or create an account.")}
       else if (userInfo.username === userData[0].username && userInfo.password === userData[0].password){
-        setIsLoggedIn(true)
         setCurrentUser(userData[0])
+        setIsLoggedIn(true)
         history.push("/")
       }
     })
@@ -38,7 +38,7 @@ function App() {
 
   function handleLogOut(){
     setIsLoggedIn(false)
-    setCurrentUser("guest")
+    setCurrentUser({})
     history.push("/login")
   }
 
@@ -81,24 +81,47 @@ function App() {
         }
     })
   }
-  
+
+  function updateMessages(newMessage){
+    fetch(`http://localhost:3000/users/${currentUser.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "Application/json"
+      },
+      body: JSON.stringify({
+        messages: [
+          ...currentUser.messages,
+          newMessage
+        ]
+      })
+    })
+    .then(res=>res.json())
+    .then(data=>setCurrentUser({
+      ...currentUser,
+      messages: [
+        ...currentUser.messages,
+        data
+      ]
+    }))
+  }
+
   return (
     <div>
     <NavBar isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
     <Switch>
       <Route exact path="/">
-        <Home isLoggedIn={isLoggedIn} currentUser={currentUser.username} />
+        <Home isLoggedIn={isLoggedIn} currentUser={currentUser} />
       </Route>
-      <Route isLoggedIn={isLoggedIn} path="/assignments">
-        <Assignments />
+      <Route exact path="/assignments">
+        <Assignments isLoggedIn={isLoggedIn} currentUser={currentUser} />
       </Route>
-      <Route isLoggedIn={isLoggedIn} path="/grades">
-        <Grades />
+      <Route exact path="/grades" >
+        <Grades isLoggedIn={isLoggedIn} currentUser={currentUser} />
       </Route>
-      <Route isLoggedIn={isLoggedIn} path="/messages">
-        <Messages />
+      <Route exact path="/messages" >
+        <Messages isLoggedIn={isLoggedIn} currentUser={currentUser} updateMessages={updateMessages} />
       </Route>
-      <Route path="/login">
+      <Route exact path="/login">
         <Login isLoggedIn={isLoggedIn} handleLogIn={handleLogIn} createAccount={createAccount} />
       </Route>
     </Switch>
