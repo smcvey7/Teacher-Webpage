@@ -60,15 +60,75 @@
       ]
     },
     {
-      "username": "pmcvey",
-      "password": "kittenmama",
-      "onAssignment": 0,
-      "completed": [],
-      "userAssignments": [],
+      "username": "pamelamcvey",
+      "password": "rocky",
+      "onAssignment": 3,
+      "completed": [
+        1,
+        2,
+        4
+      ],
+      "userAssignments": [
+        {
+          "num": 1,
+          "submission": "I am fluent in Chinese.",
+          "grade": "",
+          "completed": false,
+          "comments": "",
+          "isGraded": false
+        },
+        {
+          "num": 1,
+          "submission": "I am fluent in Mandarin Chinese.",
+          "grade": "",
+          "completed": false,
+          "comments": "",
+          "isGraded": false
+        },
+        {
+          "num": 1,
+          "submission": "I am fluent in Mandarin Chinese.",
+          "grade": "",
+          "completed": true,
+          "comments": "",
+          "isGraded": false
+        },
+        {
+          "num": 2,
+          "submission": "They're pretty much the worst.",
+          "grade": "",
+          "completed": true,
+          "comments": "",
+          "isGraded": false
+        },
+        {
+          "num": 4,
+          "submission": "My mom is better than your mom.",
+          "grade": "",
+          "completed": true,
+          "comments": "",
+          "isGraded": false
+        }
+      ],
       "messages": [
         {
           "id": 1,
+          "content": "default",
           "response": "Welcome to Mr. McVey's classroom!"
+        },
+        {
+          "sender": "pamelamcvey",
+          "hasResponse": false,
+          "content": "I want an A.",
+          "response": "",
+          "date": "2022-10-12 13:39:22"
+        },
+        {
+          "sender": "pamelamcvey",
+          "hasResponse": false,
+          "content": "Where's my A?\n",
+          "response": "",
+          "date": "2022-10-12 13:41:13"
         }
       ],
       "id": 2

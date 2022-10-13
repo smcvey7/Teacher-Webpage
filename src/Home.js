@@ -31,31 +31,31 @@ function Home({ isLoggedIn, currentUser }){
           </tr>
           <tr>
             <td>Tues 10/18</td>
-            <td>Read pg 30-35</td>
-            <td>Conversation practice-ordering food</td>
-            <td>HW book pg 15-16</td>
-            <td>Section 2 listening quiz</td>
+            <td>Read pg 36-40</td>
+            <td>Create a restaurant skit with partner</td>
+            <td>HW book pg 17-20</td>
+            <td></td>
           </tr>
           <tr>
             <td>Wed 10/19</td>
-            <td>Read pg 30-35</td>
-            <td>Conversation practice-ordering food</td>
-            <td>HW book pg 15-16</td>
-            <td>Section 2 listening quiz</td>
+            <td>Read pg 41-45</td>
+            <td>Reading practice; Chinese song-数鸭子</td>
+            <td>HW book pg 21-25</td>
+            <td>Section 2 grammar quiz</td>
           </tr>
           <tr>
             <td>Thurs 10/20</td>
-            <td>Read pg 30-35</td>
-            <td>Conversation practice-ordering food</td>
-            <td>HW book pg 15-16</td>
-            <td>Section 2 listening quiz</td>
+            <td>Read pg 46-50</td>
+            <td>Conversation practice-describing food</td>
+            <td>HW book pg 26-28</td>
+            <td></td>
           </tr>
           <tr>
             <td>Fri 10/21</td>
-            <td>Read pg 30-35</td>
-            <td>Conversation practice-ordering food</td>
-            <td>HW book pg 15-16</td>
-            <td>Section 2 listening quiz</td>
+            <td>Read pg 51-55</td>
+            <td>Skit performances</td>
+            <td>HW book pg 29-33</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
