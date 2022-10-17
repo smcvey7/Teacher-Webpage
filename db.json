@@ -28,10 +28,10 @@
         {
           "num": 2,
           "submission": "我家有五口人",
-          "grade": "",
+          "grade": 3.2,
           "completed": true,
           "comments": "",
-          "isGraded": false,
+          "isGraded": true,
           "title": "My family-我的家人",
           "type": "writing",
           "due": "10/2",
