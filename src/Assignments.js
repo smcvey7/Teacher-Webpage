@@ -51,16 +51,18 @@ function Assignments({ isLoggedIn, currentUser, saveSubmission }){
 
   if (!isLoggedIn) return <p>Log in to view assignments</p>
   else return(
-    <div>
-      <h2>Current assignment</h2>
-      <ul>{currentAssignmentModule}</ul>
-      <h2>Upcoming assignments</h2>
-      <div>
-      <ul>{UpcomingAssignmentModules}</ul>
+    <div className="componentFlexContainer" >
+      <div className="moduleElement">
+        <h2>Current assignment</h2>
+        <ul>{currentAssignmentModule}</ul>
       </div>
-      <h2>Completed assignments</h2>
-      <div>
-      <ul>{completedAssignmentModules}</ul>
+      <div className="moduleElement">
+        <h2>Upcoming assignments</h2>
+        <ul>{UpcomingAssignmentModules}</ul>
+      </div>
+      <div className="moduleElement">
+        <h2>Completed assignments</h2>
+        <ul>{completedAssignmentModules}</ul>
       </div>
     </div>
   )

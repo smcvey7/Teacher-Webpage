@@ -17,7 +17,13 @@
           "grade": 5,
           "completed": true,
           "comments": "你好李咏珲，很高兴认识你！",
-          "isGraded": true
+          "isGraded": true,
+          "title": "Self introduction-自我介绍",
+          "type": "writing",
+          "due": "9/30",
+          "worth": 5,
+          "prompt": "Write a short paragraph introducing yourself using the vocabulary and sentance patterns we learned in unit 1 (pg 2-15)"
+      
         },
         {
           "num": 2,
@@ -25,7 +31,12 @@
           "grade": "",
           "completed": true,
           "comments": "",
-          "isGraded": false
+          "isGraded": false,
+          "title": "My family-我的家人",
+          "type": "writing",
+          "due": "10/2",
+          "worth": 5,
+          "prompt": "Write a short paragraph introducing your family."
         }
       ],
       "messages": [
@@ -56,6 +67,20 @@
           "content": "Thanks for all your help today!",
           "response": "",
           "date": "2022-10-11 21:51:52"
+        },
+        {
+          "sender": "smcvey",
+          "hasResponse": false,
+          "content": "Can we watch a movie in class soon?",
+          "response": "",
+          "date": "2022-10-16 12:59:15"
+        },
+        {
+          "sender": "smcvey",
+          "hasResponse": false,
+          "content": "When is your birthday?",
+          "response": "",
+          "date": "2022-10-16 13:3:19"
         }
       ]
     },
@@ -145,7 +170,7 @@
       "prompt": "Write a short paragraph introducing yourself using the vocabulary and sentance patterns we learned in unit 1 (pg 2-15)",
       "submission": {
         "text": "",
-        "completed": true
+        "completed": false
       }
     },
     {

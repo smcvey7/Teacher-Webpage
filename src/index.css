@@ -33,3 +33,56 @@ a:hover{
 .flexContainer{
   display: flex;
 }
+
+.componentFlexContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.moduleElement{
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  margin: 10px;
+}
+
+.messageButtons{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+button{
+  margin-left: 20px;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.noBullet{
+  list-style: none;
+}
+
+.messageItem{
+  margin: 20px;
+}
+
+.noMargin{
+  margin: 0px;
+  padding: 0px;
+}
+
+table{
+  width: 90%;
+  text-align: center;
+  border-style: solid;
+  border-collapse: collapse;
+  margin-left: 5%;
+  word-wrap: normal;
+}
+
+td, th{
+  border-style: solid;
+  border-collapse: collapse;
+}
