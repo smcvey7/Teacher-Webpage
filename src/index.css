@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(102, 103, 171, 0.7);
+
 }
 
 code {
@@ -18,16 +20,12 @@ div#navBar {
 }
 
 a:link, a:visited {
-  color: black;
+  color: white;
   text-decoration: underline;
 }
 
 a.clickLink{
   text-decoration: underline;
-}
-
-a:hover{
-  font-weight: bold;
 }
 
 .flexContainer{
@@ -43,7 +41,8 @@ a:hover{
   border-style: solid;
   border-radius: 10px;
   border-width: 3px;
-  margin: 10px;
+  margin: 25px 50px 25px 50px;
+  background-color: white;
 }
 
 .messageButtons{
@@ -53,7 +52,7 @@ a:hover{
   margin-left: 50px;
 }
 
-button{
+button, input.sendButton{
   margin-left: 20px;
   color: black;
   background-color: white;
@@ -78,11 +77,54 @@ table{
   text-align: center;
   border-style: solid;
   border-collapse: collapse;
+  margin: 20px 20px 50px 20px ;
   margin-left: 5%;
+  margin-bottom: 50px;
   word-wrap: normal;
 }
 
 td, th{
   border-style: solid;
   border-collapse: collapse;
+  padding: 10px;
+}
+
+h1, h2{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-left: 25px;
+}
+
+#navBar{
+  font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+a.navLinks{
+  text-decoration: none;
+}
+
+a.navLinks:hover{
+  color: black;
+  text-decoration: none;
+}
+
+div.accountForm{
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 3px;
+  margin: 10px;
+  background-color: white;
+  width: 50%;
+}
+
+#createAccountForm, #logInForm, #newMessageForm{
+  margin: 15px;
+}
+
+input{
+  margin: 10px;
+}
+
+textarea#newMessageTextArea{
+  width: 450px;
+  height: 175px;
 }

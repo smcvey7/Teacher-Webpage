@@ -42,22 +42,27 @@ function Login({ isLoggedIn, handleLogIn, createAccount }){
 
 
   if (!isLoggedIn) return(
-    hasAccount ? <div>
+    hasAccount ?
+    <div>
       <h1>Login</h1>
-      <form id="logInForm" onSubmit={onSubmitClick}>
-        username:<input value={userInfo.username} name="username" onChange={handleChange}/>
-        password:<input type="password" name="password" value={userInfo.password} onChange={handleChange}/><button id="submitLogIn">Submit</button><br/>
-        <a className="clickLink" onClick={()=>setHasAccount(false)}>Create an account here</a><br/>
-      </form>
+      <div className="accountForm">
+        <form id="logInForm" onSubmit={onSubmitClick}>
+          username:<input value={userInfo.username} name="username" onChange={handleChange}/><br/>
+          password:<input type="password" name="password" value={userInfo.password} onChange={handleChange}/><input type="submit" className="sendButton" id="submitLogIn" /><br/>
+          <a className="clickLink" onClick={()=>setHasAccount(false)}>Create an account here</a><br/>
+        </form>
+      </div>
     </div>
     :
     <div>
       <h1>Create Account</h1>
-      <form id="createAccountForm" onSubmit={onCreateAccountClick}>
-        username:<input value={userInfo.username} name="username" onChange={handleChange}/>
-        password:<input type="password" name="password" value={userInfo.password} onChange={handleChange}/><button id="submitCreateAccount">Submit</button><br/>
-        <a className="clickLink" onClick={()=>setHasAccount(true)}>Have an account? Login here</a><br/>
-      </form>
+      <div className=" accountForm" >
+        <form  id="createAccountForm" onSubmit={onCreateAccountClick}>
+          username:<input value={userInfo.username} name="username" onChange={handleChange}/><br/>
+          password: <input type="password" name="password" value={userInfo.password} onChange={handleChange}/><input type="submit" className="sendButton" id="submitCreateAccount" /><br/>
+          <a className="clickLink" onClick={()=>setHasAccount(true)}>Have an account? Login here</a><br/>
+        </form>
+      </div>
     </div>
   )
 }

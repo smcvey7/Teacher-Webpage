@@ -52,6 +52,7 @@ function Assignments({ isLoggedIn, currentUser, saveSubmission }){
   if (!isLoggedIn) return <p>Log in to view assignments</p>
   else return(
     <div className="componentFlexContainer" >
+      <h2>Assignments</h2>
       <div className="moduleElement">
         <h2>Current assignment</h2>
         <ul>{currentAssignmentModule}</ul>

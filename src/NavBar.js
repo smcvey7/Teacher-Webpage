@@ -6,11 +6,11 @@ function NavBar({ handleLogOut, isLoggedIn, currentUser }){
 
   return(
     <div id="navBar" className="flexContainer">
-      <NavLink to="/" exact>Home</NavLink>
-      <NavLink to="/assignments" >Assignments</NavLink>
-      <NavLink to="/grades" >Grades</NavLink>
-      <NavLink to="/messages" >Messages</NavLink>
-      {isLoggedIn ? <NavLink onClick={handleLogOut} to="/" >Logout</NavLink> : <NavLink to="/login" >Login</NavLink>}
+      <NavLink className="navLinks" to="/" exact>Home</NavLink>
+      <NavLink className="navLinks" to="/assignments" >Assignments</NavLink>
+      <NavLink className="navLinks" to="/grades" >Grades</NavLink>
+      <NavLink className="navLinks" to="/messages" >Messages</NavLink>
+      {isLoggedIn ? <NavLink className="navLinks" onClick={handleLogOut} to="/" >Logout</NavLink> : <NavLink className="navLinks" to="/login" >Login</NavLink>}
     </div>
   )
 }

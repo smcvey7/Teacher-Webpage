@@ -33,9 +33,14 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
       date: dateTime
     }
     e.preventDefault()
-    updateMessages(newMessage)
-    setMessageContent("")
-    setSendNew(false)
+    if (newMessage.content === ""){
+      alert("Message empty")
+    }else{
+      updateMessages(newMessage)
+      setMessageContent("")
+      setSendNew(false)
+    }
+    
   }
   
 
@@ -46,6 +51,7 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
   if (!isLoggedIn) return <p>Log in to view messages</p>
   else return(
     <div className="componentFlexContainer">
+      <h2>Messages</h2>
       <div className="messageButtons">
         <div>
           <button className="messageButton" onClick={getMessages}>Get messages</button>
@@ -53,16 +59,17 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
         </div>
         <div>
           {sendNew ? 
-            <form onSubmit={handleMessageSubmit}>
-              <h2>New Message</h2>
-              <textarea onChange={onChange} value={messageContent} ></textarea><br/>
-              <input type="submit" />
-            </form> : <p></p>}
+          <div className="accountForm">
+            <form id="newMessageForm" onSubmit={handleMessageSubmit}>
+              <textarea id="newMessageTextArea" onChange={onChange} value={messageContent} ></textarea><br/>
+              <input className="sendButton" type="submit" value="Send"/>
+              <button onClick={()=>setSendNew(false)}>Cancel</button>
+            </form> 
+          </div>:
+            <p></p>}
         </div>
       </div>
-      
       <div >
-        <h2>Messages</h2>
         <ul>{messageModules}</ul>
       </div>
     </div>
