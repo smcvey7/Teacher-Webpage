@@ -1,23 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function Grades({ isLoggedIn, currentUser }){
   const [received, setReceived]=useState(0)
   const [possible, setPossible]=useState(0)
   const [showGrades, setShowGrades]=useState(false)
 
-  function getGrades(){
-    const receivedArray = currentUser.userAssignments.map(item=>{
+  useEffect(()=>{
+    const receivedArray = currentUser.userAssignments ? currentUser.userAssignments.map(item=>{
       if (item.isGraded) {return item.grade}
       else return null
-    })
-    const possibleArray = currentUser.userAssignments.map(item=>{
+    }) : []
+    const possibleArray = currentUser.userAssignments ? currentUser.userAssignments.map(item=>{
       if (item.isGraded) {return item.worth}
       else return null
-    })
+    }) : []
     setReceived(receivedArray)
     setPossible(possibleArray)
     setShowGrades(true)
-  }
+  }, [])
 
   const assignmentEntries = currentUser.userAssignments === undefined ? <tr></tr> : currentUser.userAssignments.map(item=>{
     return <tr key={item.num}>
@@ -32,7 +32,6 @@ function Grades({ isLoggedIn, currentUser }){
   else return(
     <div>
       <h2>Grades</h2>
-      <button onClick={getGrades}>Get grades</button>
       {showGrades ? 
         <div className="moduleElement">
           <table>

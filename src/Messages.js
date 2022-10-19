@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Message from "./Message";
 
 function Messages({ isLoggedIn, currentUser, updateMessages }){
@@ -6,11 +6,11 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
   const [messageContent, setMessageContent]=useState("")
   const [sendNew, setSendNew]=useState(false)
   
-  function getMessages(){
-    if (currentUser.messages !== undefined){
-      setMessages(currentUser.messages)
-    }
+useEffect(()=>{
+  if (currentUser.messages !== undefined){
+    setMessages(currentUser.messages)
   }
+}, [])
 
   function onChange(e){
     const content = e.target.value
@@ -54,7 +54,6 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
       <h2>Messages</h2>
       <div className="messageButtons">
         <div>
-          <button className="messageButton" onClick={getMessages}>Get messages</button>
           <button className="messageButton" onClick={()=>setSendNew(true)} >New message</button>
         </div>
         <div>
