@@ -22,7 +22,12 @@ function Assignment({assignmentInfo, userAssignment, saveSubmission}){
       grade : "",
       completed: e.target.name === "save" ? false : true ,
       comments : "",
-      isGraded : false
+      isGraded : false,
+      title: assignmentInfo.title,
+      type: assignmentInfo.type,
+      due: assignmentInfo.due,
+      worth: assignmentInfo.worth,
+      prompt: assignmentInfo.prompt
     }
     saveSubmission(assignmentSubmission)
     setIsWorkingOn(false)
@@ -36,8 +41,8 @@ function Assignment({assignmentInfo, userAssignment, saveSubmission}){
         <p>{assignmentInfo.prompt}</p>
         {isWorkingOn ? 
         <form onSubmit={submitAssignment}>
-          <textarea value={submission} onChange={handleChange}></textarea><br/>
-        <button name="save" onClick={submitAssignment}>Save</button><input type="submit" />
+          <textarea className="assignmentText" value={submission} onChange={handleChange}></textarea><br/>
+        <button name="save" onClick={submitAssignment}>Save</button><input className="sendButton" type="submit" />
         </form>
         : <button onClick={()=>setIsWorkingOn(true)}>Create/edit submission</button>}
       </div>
@@ -45,15 +50,15 @@ function Assignment({assignmentInfo, userAssignment, saveSubmission}){
   } else{
     return(
       <div>
-        <h3>{assignmentInfo.num}-{assignmentInfo.title} ({userAssignment.grade}/{assignmentInfo.worth} points)</h3>
+        <h3>{assignmentInfo.num}-{assignmentInfo.title} <strong className="completedScore">({userAssignment.grade}/{assignmentInfo.worth} points)</strong></h3>
         <small>{assignmentInfo.type}-Due: {assignmentInfo.due}</small>
         <p>{assignmentInfo.prompt}</p>
         <p><strong>Submission:</strong> {userAssignment.submission}</p>
         <p><strong>Teacher's Comments:</strong> {userAssignment.comments}</p>
         {isWorkingOn ? 
         <form onSubmit={submitAssignment}>
-          <textarea onChange={handleChange} value={submission}></textarea><br/>
-          <button name="save" onClick={submitAssignment}>Save</button><input type="submit" />
+          <textarea className="assignmentText" onChange={handleChange} value={submission}></textarea><br/>
+          <button name="save" onClick={submitAssignment}>Save</button><input className="sendButton" type="submit" />
         </form>
         : <div>
             <button onClick={()=>setIsWorkingOn(true)}>Edit submission</button>

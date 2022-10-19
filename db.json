@@ -4,10 +4,11 @@
       "id": 1,
       "username": "smcvey",
       "password": "password",
-      "onAssignment": 3,
+      "onAssignment": 4,
       "completed": [
         1,
-        2
+        2,
+        3
       ],
       "userAssignments": [
         {
@@ -36,6 +37,19 @@
           "due": "10/2",
           "worth": 5,
           "prompt": "Write a short paragraph introducing your family."
+        },
+        {
+          "num": 3,
+          "submission": "我喜欢看书，跑步，和拉小提琴。我在家里看书。我跟朋友在公园跑步。我的小提琴是我妈妈小时侯拉的。",
+          "grade": "",
+          "completed": true,
+          "comments": "",
+          "isGraded": false,
+          "title": "My hobbies-我的爱好",
+          "type": "writing",
+          "due": "10/4",
+          "worth": 5,
+          "prompt": "Write a short paragraph introducing your hobbies."
         }
       ],
       "messages": [
@@ -190,7 +204,7 @@
       "num": 3,
       "title": "My hobbies-我的爱好",
       "type": "writing",
-      "due": "10/2",
+      "due": "10/4",
       "worth": 5,
       "prompt": "Write a short paragraph introducing your hobbies.",
       "submission": {
@@ -205,7 +219,59 @@
       "type": "translation",
       "due": "10/5",
       "worth": 5,
-      "prompt": "Translate the following into English:\n 门前大桥下,游过一群鸭 \n 快来快来数一数,二四六七八 \n 嘎嘎嘎嘎，真呀真多 \n 数不清到底多少鸭 \n 数不清到底多少鸭 \n 赶鸭老爷爷，胡子白花花 \n 唱呀唱着家乡戏，还会说笑话 \n 小孩，小孩，快快上学校 \n 别考个鸭蛋抱回家 \n 别考个鸭蛋抱回家",
+      "prompt": "Translate the following into English:\n\n门前大桥下，游过一群鸭\n快来快来数一数，二四六七八\n嘎嘎嘎嘎，真呀真多\n数不清到底多少鸭\n数不清到底多少鸭\n赶鸭老爷爷，胡子白花花\n唱呀唱着家乡戏，还会说笑话\n小孩，小孩，快快上学校\n别考个鸭蛋抱回家\n别考个鸭蛋抱回家",
+      "submission": {
+        "text": "",
+        "completed": false
+      }
+    },
+    {
+      "id": 5,
+      "num": 5,
+      "title": "My room-我的房间",
+      "type": "writing",
+      "due": "10/7",
+      "worth": 5,
+      "prompt": "Write a short paragraph about where where you live.",
+      "submission": {
+        "text": "",
+        "completed": false
+      }
+    },
+    {
+      "id": 6,
+      "num": 6,
+      "title": "My commute-怎么来上课",
+      "type": "writing",
+      "due": "10/9",
+      "worth": 5,
+      "prompt": "Write a short paragraph about how you come to school.",
+      "submission": {
+        "text": "",
+        "completed": false
+      }
+    },
+    {
+      "id": 7,
+      "num": 7,
+      "title": "My friends-我的朋友",
+      "type": "writing",
+      "due": "10/11",
+      "worth": 5,
+      "prompt": "Write a short paragraph describing at least 3 of your friends.",
+      "submission": {
+        "text": "",
+        "completed": false
+      }
+    },
+    {
+      "id": 8,
+      "num": 8,
+      "title": "卖汤圆",
+      "type": "translation",
+      "due": "10/13",
+      "worth": 5,
+      "prompt": "Translate the following into English: \n\n卖汤圆 卖汤圆，小二哥的汤圆是圆又圆。\n一碗汤圆满又满，三毛钱呀买一碗。\n汤圆汤圆卖汤圆，汤圆一样可以当茶饭。\n嘿~嘿哟～\n汤圆汤圆卖汤圆，汤圆一样可以当茶饭。\n汤圆汤圆卖汤圆，汤圆一样可以当茶饭。\n卖汤圆 卖汤圆，小二哥的汤圆是圆又圆。\n一碗汤圆满又满，三毛钱呀买一碗。\n汤圆汤圆卖汤圆，公平交易可以包退换。\n嘿~嘿哟～\n汤圆汤圆卖汤圆，公平交易可以包退换。\n汤圆汤圆卖汤圆，公平交易可以包退换",
       "submission": {
         "text": "",
         "completed": false

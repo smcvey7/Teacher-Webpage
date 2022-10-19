@@ -9,6 +9,10 @@ body {
 
 }
 
+#root {
+  white-space: pre-line;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -127,4 +131,13 @@ input{
 textarea#newMessageTextArea{
   width: 450px;
   height: 175px;
+}
+
+strong.completedScore{
+  color: rgb(102, 103, 171);
+}
+
+textarea.assignmentText{
+  width: 700px;
+  height: 500px;
 }

@@ -6,8 +6,15 @@ function Grades({ isLoggedIn, currentUser }){
   const [showGrades, setShowGrades]=useState(false)
 
   function getGrades(){
-    const receivedArray = currentUser.userAssignments.map(item=>{return item.grade})
-    const possibleArray = currentUser.userAssignments.map(item=>{return item.worth})
+    const receivedArray = currentUser.userAssignments.map(item=>{
+      if (item.isGraded) {return item.grade}
+      else return null
+    })
+    const possibleArray = currentUser.userAssignments.map(item=>{
+      if (item.isGraded) {return item.worth}
+      else return null
+    })
+    console.log("received", receivedArray, "possible", possibleArray)
     setReceived(receivedArray)
     setPossible(possibleArray)
     setShowGrades(true)
@@ -19,7 +26,7 @@ function Grades({ isLoggedIn, currentUser }){
       <td>{item.title}</td>
       <td>{item.isGraded ? item.grade : "-"}</td>
       <td>{item.worth}</td>
-      <td>{Math.floor(item.grade/item.worth*100)}</td>
+      <td>{item.isGraded ? Math.floor(item.grade/item.worth*100) : "-"}</td>
     </tr>
   })
   if (!isLoggedIn) return <p>Log in to view grades</p>
