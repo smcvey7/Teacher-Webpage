@@ -14,7 +14,6 @@ function Grades({ isLoggedIn, currentUser }){
       if (item.isGraded) {return item.worth}
       else return null
     })
-    console.log("received", receivedArray, "possible", possibleArray)
     setReceived(receivedArray)
     setPossible(possibleArray)
     setShowGrades(true)
