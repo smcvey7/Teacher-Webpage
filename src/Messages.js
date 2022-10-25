@@ -7,7 +7,7 @@ function Messages({ isLoggedIn, currentUser, updateMessages }){
   const [sendNew, setSendNew]=useState(false)
   
 useEffect(()=>{
-  if (currentUser.messages !== undefined){
+  if (isLoggedIn){
     setMessages(currentUser.messages)
   }
 }, [])
@@ -22,7 +22,7 @@ useEffect(()=>{
 
     const today = new Date();
     const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const time = today.getHours() + ":" + (date.getMinutes()<10?'0':'') + date.getMinutes() + ":" + today.getSeconds();
     const dateTime = date+' '+time;
 
     const newMessage = {
@@ -40,7 +40,7 @@ useEffect(()=>{
       setMessageContent("")
       setSendNew(false)
     }
-    
+    setMessages([...messages, newMessage])
   }
   
 
@@ -65,7 +65,7 @@ useEffect(()=>{
               <button onClick={()=>setSendNew(false)}>Cancel</button>
             </form> 
           </div>:
-            <p></p>}
+            <></>}
         </div>
       </div>
       <div >
