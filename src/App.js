@@ -46,7 +46,7 @@ function App() {
     const newUser = {
       username: userInfo.username,
       password: userInfo.password,
-      onAssignment: 0,
+      onAssignment: 1,
       completed: [],
       userAssignments: [],
       messages: [

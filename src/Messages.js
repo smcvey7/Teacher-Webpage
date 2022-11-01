@@ -19,10 +19,12 @@ useEffect(()=>{
   }
 
   function handleMessageSubmit(e){
+    console.log(e)
+    e.preventDefault()
 
     const today = new Date();
     const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    const time = today.getHours() + ":" + (date.getMinutes()<10?'0':'') + date.getMinutes() + ":" + today.getSeconds();
+    const time = today.getHours() + ":" + (today.getMinutes()<10?'0':'') + today.getMinutes() + ":" + today.getSeconds();
     const dateTime = date+' '+time;
 
     const newMessage = {
@@ -32,7 +34,6 @@ useEffect(()=>{
       response: "",
       date: dateTime
     }
-    e.preventDefault()
     if (newMessage.content === ""){
       alert("Message empty")
     }else{

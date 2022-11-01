@@ -16,6 +16,6 @@ application are:
 
 ## Running
 
-The project runs through the [json-server](https://github.com/typicode/json-server project as both a static file server and managing a JSON based database and API. First install using the command  `npm install -g json-server`, then from the project root use `json-server --watch db.json`. This will launch the json-server with the site accessible from [localhost:3000](http://localhost:3000/)
+The project runs through the [json-server](https://github.com/typicode/json-server project as both a static file server and managing a JSON based database and API. To run the server, from the project root use the command `npm run server`. This will launch the json-server with the site accessible from [localhost:3000](http://localhost:3000/)
 
-The application can then be opened using the command `npm start`. Since port 3000 already has the json-server running, it may ask whether or not to run the app on a different port. Say yes.
+The application can then be opened using the command `npm start`.
