@@ -4,11 +4,10 @@
       "id": 1,
       "username": "student123",
       "password": "password",
-      "onAssignment": 4,
+      "onAssignment": 3,
       "completed": [
         1,
-        2,
-        3
+        2
       ],
       "userAssignments": [
         {
@@ -37,19 +36,6 @@
           "due": "10/2",
           "worth": 5,
           "prompt": "Write a short paragraph introducing your family."
-        },
-        {
-          "num": 3,
-          "submission": "This is my submission",
-          "grade": "",
-          "completed": true,
-          "comments": "",
-          "isGraded": false,
-          "title": "My hobbies-我的爱好",
-          "type": "writing",
-          "due": "10/4",
-          "worth": 5,
-          "prompt": "Write a short paragraph introducing your hobbies."
         }
       ],
       "messages": [
@@ -80,13 +66,6 @@
           "content": "Thanks for all your help today!",
           "response": "No problem!",
           "date": "2022-10-11 21:51:52"
-        },
-        {
-          "sender": "student123",
-          "hasResponse": false,
-          "content": "Hello",
-          "response": "",
-          "date": "2022-11-1 14:05:53"
         }
       ]
     },
